@@ -1,0 +1,3 @@
+Tharindu Kalhara,Docker for Absolute Beginners with Hands on Projects
+John Smith,Python Workshop
+Jane Doe,Data Science Bootcamp

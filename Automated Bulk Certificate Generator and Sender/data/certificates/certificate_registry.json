@@ -1,0 +1,48 @@
+{
+  "certificates": {
+    "tharindu kalhara": {
+      "name": "Tharindu Kalhara",
+      "course": "Docker for Absolute Beginners with Hands on Projects",
+      "certificate_id": "HS31BZW3UEBZCKXE084O",
+      "issue_date": "2025-08-01",
+      "expiry_date": "2027-08-01",
+      "registration_timestamp": "2025-08-01T23:09:22.509158",
+      "pdf_generated": true,
+      "pdf_path": "data/certificates\\output\\Tharindu_Kalhara_certificate.pdf",
+      "email_sent": true,
+      "api_registered": true,
+      "email_timestamp": "2025-08-01T23:09:41.377647"
+    },
+    "john smith": {
+      "name": "John Smith",
+      "course": "Python Workshop",
+      "certificate_id": "MCU0JIJQLC0TDWEFUBEN",
+      "issue_date": "2025-08-01",
+      "expiry_date": "2027-08-01",
+      "registration_timestamp": "2025-08-01T23:09:22.523094",
+      "pdf_generated": true,
+      "pdf_path": "data/certificates\\output\\John_Smith_certificate.pdf",
+      "email_sent": true,
+      "api_registered": true,
+      "email_timestamp": "2025-08-01T23:09:52.455481"
+    },
+    "jane doe": {
+      "name": "Jane Doe",
+      "course": "Data Science Bootcamp",
+      "certificate_id": "7NBD02JQNPQ50V1CYOCQ",
+      "issue_date": "2025-08-01",
+      "expiry_date": "2027-08-01",
+      "registration_timestamp": "2025-08-01T23:09:22.537114",
+      "pdf_generated": true,
+      "pdf_path": "data/certificates\\output\\Jane_Doe_certificate.pdf",
+      "email_sent": true,
+      "api_registered": true,
+      "email_timestamp": "2025-08-01T23:10:03.435528"
+    }
+  },
+  "metadata": {
+    "created": "2025-08-01T22:59:20.388341",
+    "last_updated": "2025-08-01T23:10:03.435615",
+    "version": "1.0"
+  }
+}

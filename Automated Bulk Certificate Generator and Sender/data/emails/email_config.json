@@ -1,0 +1,9 @@
+{
+  "smtp_server": "smtp.gmail.com",
+  "smtp_port": 587,
+  "email": "codeku2025@gmail.com",
+  "password": "rsyaeaqiezwqwmuc",
+  "sender_name": "CoDeKu DevOps Academy Education Team",
+  "organization": "CoDeKu DevOps Academy",
+  "use_tls": true
+}

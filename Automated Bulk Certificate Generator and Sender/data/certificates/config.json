@@ -1,0 +1,30 @@
+{
+  "template_pdf": "templates/template_pdf.pdf",
+  "output_directory": "output",
+  "fields": {
+    "name": {
+      "x": 421,
+      "y": 278,
+      "font_size": 28,
+      "font_weight": "bold",
+      "color": [0, 0, 139],
+      "alignment": "center"
+    },
+    "course": {
+      "x": 421,
+      "y": 210,
+      "font_size": 20,
+      "font_weight": "bold",
+      "color": [0, 0, 0],
+      "alignment": "center"
+    },
+    "certificate_id": {
+      "x": 690,
+      "y": 40,
+      "font_size": 12,
+      "font_weight": "normal",
+      "color": [100, 100, 100],
+      "alignment": "center"
+    }
+  }
+}

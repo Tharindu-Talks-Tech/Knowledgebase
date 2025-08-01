@@ -1,0 +1,8 @@
+{
+  "api_enabled": true,
+  "api_base_url": "https://verify.devopsacademy.online/validate/admin_dashboard/api.php",
+  "api_key": "cert_api_2025_secure_key",
+  "default_expiry_years": 2,
+  "timeout_seconds": 30,
+  "retry_attempts": 2
+}

@@ -1,0 +1,13 @@
+Dear {name},
+
+Congratulations on successfully completing {course_name} course at CoDeKu DevOps Academy! 🎓 Your certificate is attached to this email.
+
+Your certificate ID is: {cert_id}
+
+Share your achievement on LinkedIn and other platforms, and don't forget to tag our CoDeKu LinkedIn page to inspire others!
+
+✅You can verify your certificate here : https://verify.devopsacademy.online/validate/user_portal/
+🌐Keep learning and explore more courses here: https://devopsacademy.online
+
+Best regards,
+CoDeKu DevOps Academy Education Team
