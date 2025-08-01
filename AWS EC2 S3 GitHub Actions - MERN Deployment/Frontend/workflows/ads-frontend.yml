@@ -1,0 +1,84 @@
+# GitHub Action Workflow File for Add Website on AWS S3, Cloudfront
+
+on:
+  pull_request:
+    types:
+      - closed # Trigger when a PR is closed
+    branches:
+      - main # Only for the main branch
+      - master # Also for the master branch
+      # - development # Also for the development branch
+  workflow_dispatch: # Allow manual triggering of the workflow
+
+name: 🚀 Deploy Ads Website Frontend on AWS S3, Cloudfront 🚀
+
+permissions:
+  id-token: write # Required for OIDC authentication
+  contents: read # Required for OIDC authentication
+  pull-requests: write # Required for OIDC authentication and PR checks
+
+jobs:
+  AWS-S3-Deploy:
+    if: github.event.pull_request.merged == true && contains(github.event.pull_request.title, 'codingcad-deploy-dev')
+    name: 🌍 AWS S3 Bucket Deploy
+    runs-on: ubuntu-latest
+
+    environment: development
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+
+      - name: 🛠️ Setup Node.js 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: 🏗️ Build project - Vite React
+        run: npm run build
+
+      - name: 🔐 Configure AWS credentials - OIDC Authentication
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.OIDC_ROLE_ARN}}
+          role-session-name: ${{ secrets.OIDC_SESSION_NAME}}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: ☁️ Sync files to AWS S3 Bucket
+        run: |
+          aws s3 sync dist/ s3://${{ secrets.S3_BUCKET_NAME }} \
+            --delete \
+            --cache-control "no-cache"
+
+      - name: 🚀 Invalidate CloudFront Cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"
+
+      - name: ✅ Deployment Success
+        run: echo "🎉 Deployment to AWS S3 completed successfully!"
+# -----------------------------------------------------------------------------------------
+# Please make sure these secrets are set in your GitHub repository settings under Secrets.:
+# -----------------------------------------------------------------------------------------
+
+# AWS_ACCESS_KEY_ID
+# AWS_SECRET_ACCESS_KEY
+# AWS_REGION
+# S3_BUCKET_NAME
+# CLOUDFRONT_DISTRIBUTION_ID
+
+# -----------------------------------------------------------------------------
+# These secrets are used to authenticate and authorize the deployment process.
+# Make sure to set them in your repository settings under Secrets.
+# -----------------------------------------------------------------------------
+# - name: 🔐 Configure AWS credentials
+#   uses: aws-actions/configure-aws-credentials@v2
+#   with:
+#     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#     aws-region: ${{ secrets.AWS_REGION }}
+# -----------------------------------------------------------------------------
